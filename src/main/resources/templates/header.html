@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="frag(username)">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome</title>
+    </head>
+    <h1>Welcome, <span th:text="${username} + '!'"></span></h1>
+</div>
+</html>
