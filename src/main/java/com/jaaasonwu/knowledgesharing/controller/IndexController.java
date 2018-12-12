@@ -2,6 +2,7 @@ package com.jaaasonwu.knowledgesharing.controller;
 
 import com.jaaasonwu.knowledgesharing.model.User;
 import com.jaaasonwu.knowledgesharing.service.QuestionService;
+import com.jaaasonwu.knowledgesharing.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,8 @@ public class IndexController {
 
     @Autowired
     QuestionService questionService;
+    @Autowired
+    UserService userService;
 
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
@@ -50,9 +53,10 @@ public class IndexController {
         }
         model.addAttribute("map", map);
 
-        User user = new User("Jason");
+        User user = new User();
         model.addAttribute("user", user);
         model.addAttribute("msg", session.getAttribute("msg"));
+        userService.initDB();
         return "index";
     }
 
