@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:with="username = 'Jason'" th:include="header::frag(username)"></div>
+<h1>Hello</h1>
+<h1><span th:text="${msg}"></span></h1>
+<h2><span th:text="${value1}"></span></h2>
+
+<div th:each="num:${map}">
+    <p><span th:text="${num.getKey()}"></span> <span th:text="${num.getValue()}"></span> </p>
+</div>
+<p><span th:text="${map}"></span></p>
+
+<p><span th:text="${user.name}"></span></p>
+<p><span th:with="one = 1" th:text="${one}"></span></p>
+<!--<p><span th:text="${user.getName()}"></span></p>-->
+
+
+</body>
+</html>
